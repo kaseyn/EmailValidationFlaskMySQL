@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form action="/add" method="POST">
+		<label>Email Address: </label>
+		<input type="text" name="email" id="email">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

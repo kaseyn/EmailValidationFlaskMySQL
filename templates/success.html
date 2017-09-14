@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<h1>Email Addresses Entered:</h1>
+	<table>
+		<tbody>
+			{% for address in all_addresses: %}
+			<tr>
+				<td>{{ address["address"] }}</td>
+				<td>{{ address["added_at"] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
